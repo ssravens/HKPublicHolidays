@@ -86,13 +86,17 @@ The `createTableRow` method in the JS file creates the table rows. It receives a
 for each of the holidays, an ER entity structure is created. This will create all the entries for the table.
 
 Day 2: Created Get Data button, added event listener for onclick which gets holiday data from the public API and makes fetch call to local server to save in db.
+
 Since the API included a lot of data which is not for our use case, I 
 had to filter out everything except for the holiday events data. The data structure of the API is also different
-to what we want in our database, so that is the purpose of `HolidayRequest.java`. I utilised Hibernate to map `Holiday.java` with the
+to what we want in our database, so that is the purpose of `HolidayRequest.java`. Save was failing at server side due to mismatch in structure of API response to Domain object.
+Fix: Created separate POJO called HolidayRequest which map to API response and wrote converter method that map this request to Holiday domain object. I utilised Hibernate to map `Holiday.java` with the
 database. For example, `id` is mapped to the primary key. When the user presses the Get Data button,
 the UI will send all the data from the API to the backend. In the `saveAllHolidays` method in `HolidayService.java`, the request data that is received 
 needs to be converted back to the table structure. So in the `convertHolidayRequestToDomainObject` method, we are formatting the date since the API format is 
 different, so we have to convert it into the form the database takes. Once this saving is done, it sends back the response to the UI.
+At first, the public API call was failing because the response type wasn't set. I fixed this by rendering the response as JSON using res.json()
+
 Created Search button, added event listener for onclick which filters holiday data with date filter condition using select query.
 
 Day 3: Added Unit Tests. Implemented pagination so that each page can contain up to 10 records. Edited index.html to include navigation via unordered list. Inside the
