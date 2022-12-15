@@ -32,8 +32,8 @@ public class HolidayService {
 	public List<Holiday> saveAllHolidays(List<HolidayRequest> holidays) throws Exception {
 		List<Holiday> findAll = holidayRepository.findAll();
 		if (findAll.isEmpty()) {
-			List<Holiday> covertHolidayRequestToDomainObject = convertHolidayRequestToDomainObject(holidays);
-			return holidayRepository.saveAll(covertHolidayRequestToDomainObject);
+			List<Holiday> convertHolidayRequestToDomainObject = convertHolidayRequestToDomainObject(holidays);
+			return holidayRepository.saveAll(convertHolidayRequestToDomainObject);
 		}
 		return findAll;
 	}
