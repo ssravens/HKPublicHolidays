@@ -95,7 +95,16 @@ needs to be converted back to the table structure. So in the `convertHolidayRequ
 different, so we have to convert it into the form the database takes. Once this saving is done, it sends back the response to the UI.
 Created Search button, added event listener for onclick which filters holiday data with date filter condition using select query.
 
-Day 3: Added Unit Tests. 
+Day 3: Added Unit Tests. Implemented pagination so that each page can contain up to 10 records. Edited index.html to include navigation via unordered list. Inside the
+unordered list there are no list elements as these are getting populated via the JS code.
+
+### How the pagination works
+All the holidays are being saved in a list. Table rows are then created, the data is being sliced so
+instead of passing the entire array, I sliced the array into 10 elements. `currentPage` is initialised to 1 initially.
+When the data is sliced, the array index starts at 0 which is why I do `currentPage` - 1. That's for the start and at the end
+I do `currentPage` + numberOfHoliday -1 because if, for example it's 1 + 10 - this is 11. So that's why I take the 1 to make it 10.
+If, for example there are less than 10 records there is no reason to show the pagination.
+Depending on the current page, you can use the arrows to switch between records.
 
 ## Implementation Explanation
 
