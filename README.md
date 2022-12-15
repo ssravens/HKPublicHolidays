@@ -119,6 +119,7 @@ data in JSON format. When the UI makes fetch or AJAX request to current API, the
 corresponding endpoint gets triggered. It sends the request to service layer 
 HolidayService for handling business logic. From service layer, it directly hits
 HolidayRepository which is a JPA implementation file to load all the holiday data.
+
 2. POST https://localhost:8080/holiday/
 
 When the user clicks on Get Data button on UI, it first makes an API call to public 
