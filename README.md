@@ -10,6 +10,7 @@ Public API: https://api.data.gov.hk/v1/historical-archive/get-file?url=http%3A%2
 ## Contents
 - [API Documentation](#api-documentation)
 - [MySQL Database](#mysql-database)
+- [Architectural Overview](#architectural-overview)
 - [Sequence Diagram](#sequence-diagram)
 - [Requirements](#requirements)
 - [How to Use](#how-to-use)
@@ -39,6 +40,10 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.show_sql=true
 server.error.include-message=always
 ```
+
+## Architectural Overview
+![architectural_overview.png](architectural_overview.png)
+![sboot_architecture.png](sboot_architecture.png)
 
 ## Sequence Diagram
 In the below diagram, when a request is received from the client, based on REST API, 
