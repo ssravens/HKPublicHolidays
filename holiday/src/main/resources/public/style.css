@@ -1,0 +1,28 @@
+#startDate {
+    width: 250px;
+}
+
+#endDate {
+    width: 250px;
+}
+
+#filters{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+#author-name {
+    margin: auto;
+    width: 20%;
+    height: 75%;
+    padding: 10px;
+    font-size: 20px;
+}
